@@ -18,11 +18,12 @@ node {
 
   stage 'Deploy'
     
-    for r in use1 usw1 cac1 sae1 euc1 apse1 apse2; do
+    def regions = ["use1", "usw2", "cac1", "sae1", "euc1", "apse1", "apse2"]
+    regions.each { r ->
       echo "Deploying to $r"
       sleep 0.5
       echo "Done"
-    done
+    }
 
   stage 'Cleanup'
 
