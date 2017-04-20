@@ -1,9 +1,5 @@
 node {
 
-  stage 'Checkout'
-
-    git checkout
-
   stage 'Test'
 
     echo "Running tests..."
