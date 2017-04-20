@@ -1,3 +1,5 @@
+#!/usr/bin/groovy
+
 node {
   
   checkout scm
