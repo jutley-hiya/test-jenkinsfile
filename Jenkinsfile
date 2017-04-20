@@ -1,21 +1,23 @@
-pipeline {
-    agent any
+node {
+  
+  checkout scm
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+  println "Hello, world!"
+
+  stage ('compile and test') {
+    println "testing"
+  }
+
+  stage ('build') {
+    println "build"
+  }
+
+  println env.BRANCH_NAME
+
+  if (env.BRANCH_NAME == 'master') {
+    stage ('deploy') {
+      println "deploying"
     }
+  }
+
 }
